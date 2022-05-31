@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/drawer_layout"
+android:fitsSystemWindows="true"
+android:background="@color/white"
+tools:context=".AmbulanceActivity">
+<RelativeLayout
+    android:background="@color/purple_200"
+    android:id="@+id/top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/header"
+        android:background="@color/purple_200">
+        <RelativeLayout
+            android:id="@+id/back_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/left_arrow"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/top_logo"/>
+        <RelativeLayout
+            android:id="@+id/cart_button"
+            android:layout_alignParentEnd="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <ImageView
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+<RelativeLayout
+    android:background="@color/white"
+    android:layout_below="@+id/top_bar"
+    android:id="@+id/top_bar2"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_toStartOf="@+id/button_login"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/header2"
+        android:background="@color/white">
+        <RelativeLayout
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:id="@+id/re44"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@drawable/text_back">
+
+            <EditText
+                android:layout_marginStart="8dp"
+                android:id="@+id/search_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorCatText"
+                android:textSize="14sp"
+                android:hint="Find best ambulance"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:background="@null"
+                />
+
+            <Spinner
+                android:visibility="gone"
+                android:id="@+id/location_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="0dp"
+                android:layout_marginStart="4dp"
+                android:entries="@array/location_slot"
+                android:textColor="@color/colorUnitText"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_alignParentEnd="true"
+        android:id="@+id/button_login"
+        android:layout_width="70dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/search_button"
+        >
+        <TextView
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="Search"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+    <LinearLayout
+        android:layout_below="@+id/top_bar2"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/dr_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/proxima_nova_bold"
+            android:text="ambulances"
+            android:textAlignment="textStart"
+            android:textAllCaps="true"
+            android:textColor="@color/colorName"
+            android:textSize="16dp" />
+        <RelativeLayout
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<ExpandableListView
+                android:background="@color/white"
+                android:id="@+id/category_grid"
+                android:numColumns="auto_fit"
+                android:gravity="center"
+                android:columnWidth="80dp"
+                android:stretchMode="columnWidth"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"/>-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginBottom="120dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleview"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:id="@+id/re_layout3"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slider_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true" />
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/slider_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</RelativeLayout>

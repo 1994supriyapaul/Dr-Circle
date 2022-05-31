@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DrCircle</string>
+    <string-array name="location_slot">
+        <item> Select location</item>
+        <item> location 1</item>
+        <item> location 2</item>
+    </string-array>
+    <string-array name="department_slot">
+        <item> Select department</item>
+        <item> department 1</item>
+        <item> department 2</item>
+    </string-array>
+</resources>

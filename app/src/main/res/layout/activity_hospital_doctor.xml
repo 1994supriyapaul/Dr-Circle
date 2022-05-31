@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/drawer_layout"
+android:fitsSystemWindows="true"
+android:background="@color/white"
+tools:context=".HospitalDoctorActivity">
+<RelativeLayout
+    android:background="@color/purple_200"
+    android:id="@+id/top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/header"
+        android:background="@color/purple_200">
+        <RelativeLayout
+            android:id="@+id/back_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/left_arrow"/>
+        </RelativeLayout>
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/top_logo"/>
+        <RelativeLayout
+            android:id="@+id/cart_button"
+            android:layout_alignParentEnd="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+            <ImageView
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
+<LinearLayout
+    android:layout_below="@+id/top_bar"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/dr_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/proxima_nova_bold"
+        android:text="doctors"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="@color/colorName"
+        android:textSize="16dp" />
+    <RelativeLayout
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--<ExpandableListView
+            android:background="@color/white"
+            android:id="@+id/category_grid"
+            android:numColumns="auto_fit"
+            android:gravity="center"
+            android:columnWidth="80dp"
+            android:stretchMode="columnWidth"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycleview"/>
+    </RelativeLayout>
+
+</LinearLayout>
+</RelativeLayout>
